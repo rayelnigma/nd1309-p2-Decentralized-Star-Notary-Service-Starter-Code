@@ -11,16 +11,19 @@ contract StarNotary is ERC721 {
         string name;
     }
 
-    // TODO: rubric1:
-    // criteria: The smart contract tokens should have a name and a symbol.
+    string public name;
+    string public symbol;
+
+    // DONE: rubric1: The smart contract tokens should have a name and a symbol.
     // specs: Add a name and a symbol to the starNotary tokens.
     // In the Starter Code (StarNotary.sol file) you implement:
     // Implement Task 1 Add a name and symbol properties
     // name: Is a short name to your token
     // symbol: Is a short string like 'USD' -> 'American Dollar'
-
-
-    
+    constructor () public {
+        name = "HeleneToken";
+        symbol = "HTC";
+    }
 
     // mapping the Star with the Owner Address
     mapping(uint256 => Star) public tokenIdToStarInfo;
