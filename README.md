@@ -12,7 +12,7 @@
 ### Web3.js: 1.5.3
 ## Other version info:
 ### OpenZeppelin: 2.3.0
-### npm: 7.5.4
+### npm: 7.5.4 (vs 7.24.2)
 ----
 ## Dependencies
 For this project, you will need to have:
