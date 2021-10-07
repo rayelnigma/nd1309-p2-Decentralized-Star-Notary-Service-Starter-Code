@@ -2,6 +2,14 @@
 **PROJECT: Decentralized Star Notary Service Project** - For this project, you will create a DApp by adding functionality with your smart contract and deploy it on the public testnet.
 
 ---
+## DONE: rubric7: The readme.md file should include the following:
+### criteria: The readme.md file should include the following:
+1) Your ERC-721 Token Name
+2) Your ERC-721 Token Symbol
+3) Version of the Truffle and OpenZeppelin used
+
+
+---
 ## Project Info
 ### ERC-721 Token Name: HeleneToken
 ### ERC-721 Token Symbol: HTC

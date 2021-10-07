@@ -11,9 +11,15 @@ contract StarNotary is ERC721 {
         string name;
     }
 
+    // TODO: rubric1:
+    // criteria: The smart contract tokens should have a name and a symbol.
+    // specs: Add a name and a symbol to the starNotary tokens.
+    // In the Starter Code (StarNotary.sol file) you implement:
     // Implement Task 1 Add a name and symbol properties
     // name: Is a short name to your token
     // symbol: Is a short string like 'USD' -> 'American Dollar'
+
+
     
 
     // mapping the Star with the Owner Address
@@ -54,12 +60,14 @@ contract StarNotary is ERC721 {
         }
     }
 
-    // Implement Task 1 lookUptokenIdToStarInfo
+    // TODO: rubric2: Implement the function: lookUptokenIdToStarInfo in StarNotary.sol file
+    // criteria: Add a function lookUptokenIdToStarInfo, that looks up the stars using the Token ID, and then returns the name of the star.
     function lookUptokenIdToStarInfo (uint _tokenId) public view returns (string memory) {
         //1. You should return the Star saved in tokenIdToStarInfo mapping
     }
 
-    // Implement Task 1 Exchange Stars function
+    // TODO: rubric3: Implement Task 1 Exchange Stars function
+    // criteria: Add a function called exchangeStars, so 2 users can exchange their star tokens. Do not worry about the price, just write code to exchange stars between users.
     function exchangeStars(uint256 _tokenId1, uint256 _tokenId2) public {
         //1. Passing to star tokenId you will need to check if the owner of _tokenId1 or _tokenId2 is the sender
         //2. You don't have to check for the price of the token (star)
@@ -67,7 +75,8 @@ contract StarNotary is ERC721 {
         //4. Use _transferFrom function to exchange the tokens.
     }
 
-    // Implement Task 1 Transfer Stars
+    // TODO: rubric4: Implement the function transferStar in StarNotary.sol file.
+    // criteria: Write a function to Transfer a Star. The function should transfer a star from the address of the caller. The function should accept 2 arguments, the address to transfer the star to, and the token ID of the star.
     function transferStar(address _to1, uint256 _tokenId) public {
         //1. Check if the sender is the ownerOf(_tokenId)
         //2. Use the transferFrom(from, to, tokenId); function to transfer the Star
