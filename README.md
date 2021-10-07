@@ -1,12 +1,14 @@
-# ND1309 C2 Ethereum Smart Contracts, Tokens and Dapps - Project Starter 
+# ND1309 C2 Ethereum Smart Contracts, Tokens and Dapps - 2nd Project
 **PROJECT: Decentralized Star Notary Service Project** - For this project, you will create a DApp by adding functionality with your smart contract and deploy it on the public testnet.
 
-### ToDo
-This Starter Code has already implemented the functionalities you implemented in the StarNotary (Version 2) exercise, and have comments in all the files you need to implement your tasks.
-
-
-
-### Dependencies
+---
+## Project Info
+### ERC-721 Token Name: HeleneToken
+### ERC-721 Token Symbol: HTC
+### Truffle Version: 
+### OpenZeppelin Version: 
+----
+## Dependencies
 For this project, you will need to have:
 1. **Node and NPM** installed - NPM is distributed with [Node.js](https://www.npmjs.com/get-npm)
 ```bash
