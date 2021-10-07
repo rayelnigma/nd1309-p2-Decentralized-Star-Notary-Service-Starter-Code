@@ -5,8 +5,14 @@
 ## Project Info
 ### ERC-721 Token Name: HeleneToken
 ### ERC-721 Token Symbol: HTC
-### Truffle Version: 
-### OpenZeppelin Version: 
+## Truffle version info:
+### Truffle: 5.4.13
+### Solidity: 0.5.16
+### Node: 14.18.0
+### Web3.js: 1.5.3
+## Other version info:
+### OpenZeppelin: 2.3.0
+### npm: 7.5.4
 ----
 ## Dependencies
 For this project, you will need to have:
