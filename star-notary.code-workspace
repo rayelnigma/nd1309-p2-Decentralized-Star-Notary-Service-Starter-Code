@@ -4,5 +4,9 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"solidity.compileUsingRemoteVersion": "",
+		"solidity.compileUsingLocalVersion": "c:\\Users\\jerom\\source\\nd1309-p2-Decentralized-Star-Notary-Service-Starter-Code\\soljson-v0.5.16+commit.9c3226ce.js",
+		"solidity.defaultCompiler": "localFile"
+	}
 }

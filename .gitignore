@@ -17,3 +17,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 node_modules
+soljson-v0.5.16+commit.9c3226ce.js
+/bin
