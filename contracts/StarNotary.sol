@@ -63,20 +63,29 @@ contract StarNotary is ERC721 {
         }
     }
 
-    // TODO: rubric2: Implement the function: lookUptokenIdToStarInfo in StarNotary.sol file
+    // DONE: rubric2: Implement the function: lookUptokenIdToStarInfo in StarNotary.sol file
     // criteria: Add a function lookUptokenIdToStarInfo, that looks up the stars using the Token ID, and then returns the name of the star.
     function lookUptokenIdToStarInfo (uint _tokenId) public view returns (string memory) {
         //1. You should return the Star saved in tokenIdToStarInfo mapping
         return tokenIdToStarInfo[_tokenId].name;
     }
 
-    // TODO: rubric3: Implement Task 1 Exchange Stars function
+    // DONE: rubric3: Implement Task 1 Exchange Stars function
     // criteria: Add a function called exchangeStars, so 2 users can exchange their star tokens. Do not worry about the price, just write code to exchange stars between users.
     function exchangeStars(uint256 _tokenId1, uint256 _tokenId2) public {
         //1. Passing to star tokenId you will need to check if the owner of _tokenId1 or _tokenId2 is the sender
         //2. You don't have to check for the price of the token (star)
         //3. Get the owner of the two tokens (ownerOf(_tokenId1), ownerOf(_tokenId1)
         //4. Use _transferFrom function to exchange the tokens.
+        address owner1 = ownerOf(_tokenId1);
+        address owner2 = ownerOf(_tokenId2);
+
+        if(msg.sender == owner1 || msg.sender == owner2){
+            _transferFrom(owner1, owner2, _tokenId1);
+            _transferFrom(owner2, owner1, _tokenId2);
+        }else{
+            revert('one of the parameters must contain a token owned by the request to exchange stars.');
+        }
     }
 
     // TODO: rubric4: Implement the function transferStar in StarNotary.sol file.
