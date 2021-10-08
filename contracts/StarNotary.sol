@@ -88,11 +88,16 @@ contract StarNotary is ERC721 {
         }
     }
 
-    // TODO: rubric4: Implement the function transferStar in StarNotary.sol file.
+    // DONE: rubric4: Implement the function transferStar in StarNotary.sol file.
     // criteria: Write a function to Transfer a Star. The function should transfer a star from the address of the caller. The function should accept 2 arguments, the address to transfer the star to, and the token ID of the star.
     function transferStar(address _to1, uint256 _tokenId) public {
         //1. Check if the sender is the ownerOf(_tokenId)
-        //2. Use the transferFrom(from, to, tokenId); function to transfer the Star
+        if(msg.sender == ownerOf(_tokenId)){
+            //2. Use the transferFrom(from, to, tokenId); function to transfer the Star
+            _transferFrom(msg.sender, _to1, _tokenId);
+        }else{
+            revert('must be owner of star to do a transfer');
+        }
     }
 
 }

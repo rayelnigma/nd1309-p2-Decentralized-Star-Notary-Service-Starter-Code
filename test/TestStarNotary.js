@@ -158,11 +158,29 @@ it('error if sender is not owner of either star to exchange', async () => {
         'one of the parameters must contain a token owned by the request to exchange stars.');
 });
 
-// TODO: rubric5: 3) Stars Tokens can be transferred from one address to another.
+// DONE: rubric5: 3) Stars Tokens can be transferred from one address to another.
 it('lets a user transfer a star', async () => {
+    let instance = await StarNotary.deployed();
+    let starId1 = ++starIndex;
+    let user1 = accounts[1];
+    let user2 = accounts[2];
     // 1. create a Star with different tokenId
+    await instance.createStar('awesome star1', starId1, { from: user1 });
     // 2. use the transferStar function implemented in the Smart Contract
+    await instance.transferStar(user2, starId1, { from: user1 });
     // 3. Verify the star owner changed.
+    assert.equal(await instance.ownerOf(starId1), user2);
+});
+
+// DONE: error if user tries to transfer a star they don't own
+it('error if user tries to transfer a star they don\'t own', async () => {
+    let instance = await StarNotary.deployed();
+    let starId1 = ++starIndex;
+    let user1 = accounts[1];
+    let user2 = accounts[2];
+    await instance.createStar('awesome star1', starId1, { from: user1 });
+    await truffleAssert.reverts(instance.transferStar(user2, starId1, { from: user2 }),
+        'must be owner of star to do a transfer');
 });
 
 // DONE: rubric5: 4) bonus?
