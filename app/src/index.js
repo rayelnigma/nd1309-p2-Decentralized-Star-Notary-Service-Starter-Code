@@ -39,10 +39,14 @@ const App = {
     App.setStatus("New Star Owner is " + this.account + ".");
   },
 
-  // TODO: rubric6: Implement Task 4 Modify the front end of the DAPP
+  // DONE: rubric6: Implement Task 4 Modify the front end of the DAPP
   // criteria: When you click on the button "Look Up a Star" the application shows in the status the Star information.
   lookUp: async function () {
-
+    const { lookUptokenIdToStarInfo } = this.meta.methods;
+    const { ownerOf } = this.meta.methods;
+    const id = document.getElementById("lookid").value;
+    let starName = await lookUptokenIdToStarInfo(id).call();
+    App.setStatus("The star " + id + " is named: " + starName + ", and owned by: " + await ownerOf(id).call());
   }
 
 };
