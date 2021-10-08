@@ -93,10 +93,17 @@ it('lets user2 buy a star and decreases its balance in ether', async () => {
 
 // Implement Task 2 Add supporting unit tests
 
-// TODO: rubric5: 1) The token name and token symbol are added properly.
+// DONE: rubric5: 1) The token name and token symbol are added properly.
 it('can add the star name and star symbol properly', async () => {
+    let expectedName = 'HeleneToken';
+    let expectedSymbol = 'HTC';
     // 1. create a Star with different tokenId
+    let tokenId = ++starIndex;
+    let instance = await StarNotary.deployed();
+    await instance.createStar('Awesome Star!', tokenId, { from: accounts[0] })
     //2. Call the name and symbol properties in your Smart Contract and compare with the name and symbol provided
+    assert.equal(await instance.name(), expectedName);
+    assert.equal(await instance.symbol(), expectedSymbol);
 });
 
 // DONE: rubric5: 2) 2 users can exchange their stars.
@@ -137,7 +144,7 @@ it('lets 2 users exchange stars where 2nd parameter is msg sender', async () => 
 });
 
 it('error if sender is not owner of either star to exchange', async () => {
-    // TODO: test: error if sender is not owner of either star to exchange
+    // DONE: test: error if sender is not owner of either star to exchange
     let instance = await StarNotary.deployed();
     let starId1 = ++starIndex;
     let starId2 = ++starIndex;
@@ -158,7 +165,7 @@ it('lets a user transfer a star', async () => {
     // 3. Verify the star owner changed.
 });
 
-// TODO: rubric5: 4) bonus?
+// DONE: rubric5: 4) bonus?
 it('lookUptokenIdToStarInfo test', async () => {
     // 1. create a Star with different tokenId
     let tokenId = ++starIndex;
